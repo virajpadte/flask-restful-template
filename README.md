@@ -1,4 +1,6 @@
 # Flask-restful-template
+[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](http://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
+
 I have used flask for a lot of projects now and I realized very soon thaat having a consistent and structure to the flask app is needed as the flask routes increase. While flask documentation does not clearly mention a lot in this regard, based on some articles I read, I have come up with a good structure for using flask to develop containerized python APIs.
 
 
@@ -40,9 +42,17 @@ make stop - will stop and remove the container<br />
 make clean - will delete container image<br />
 
 ***Todos:***<br />
+1. Add some debugging probe for local as well as in-container execution if possible
 1. Add structure for tasks
 2. Add structure for DB layer
 3. Add structure for unit tests
 4. Add structure for generating project documentation via code
 5. Add support for swagger documentation
 6. Extend support for running local and dockerized tests using make commands
+
+
+### License Summary
+This sample code is made available under the Apache License Version 2.0. See the LICENSE file.
+
+### Keep contributing to Open Source
+लोकाः समस्ताः सुखिनोभवंतु
