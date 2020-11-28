@@ -46,6 +46,7 @@ make clean - will delete container image<br />
 1. Add structure for tasks
 2. Add structure for DB layer
 3. Add structure for unit tests
+4. Add structure for performance tests using k6 testing suite
 4. Add structure for generating project documentation via code
 5. Add support for swagger documentation
 6. Extend support for running local and dockerized tests using make commands
