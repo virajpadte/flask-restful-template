@@ -23,8 +23,9 @@ wsgi.py               # needed to allow gunicorn to connect to Flask application
 **Setup Development environment:**<br />
 ```
 cd flask-restful-template
-virtualenv -p {your-current-python3-version} env
-source env/bin/activate
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install --upgrade pip
 pip3 install -r requirements.txt
 ```
 

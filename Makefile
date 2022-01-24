@@ -15,7 +15,7 @@ build-nc: ## Build the container without caching
 	docker build --no-cache -t $(SERVICE_NAME) .
 
 run-local: ## Run container on port configured in `config.env`
-	cd service; python -m flask run -p 5001
+	cd service; python3 -m flask run -p 5001
 
 run: ## Run container on port configured in `config.env`
 	docker run -p=5001:5000 --name=$(SERVICE_NAME) $(SERVICE_NAME)
