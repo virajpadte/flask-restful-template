@@ -1,5 +1,6 @@
 import config
-from api import api
+from api import api_standard
+from api import api_mtls
 from flask import Flask
 from api.common.logger import log
 
@@ -8,7 +9,8 @@ def create_app():
     log.info(f'Starting app in {config.APP_ENV} environment')
     app = Flask(__name__)
     app.config.from_object('config')
-    api.init_app(app)
+    api_standard.init_app(app)
+    api_mtls.init_app(app)
     return app
 
 

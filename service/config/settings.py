@@ -1,5 +1,6 @@
 class BaseConfig():
     API_PREFIX = '/api'
+    SECURE_API_PREFIX = '/api/secure'
     TESTING = False
     DEBUG = False
 

@@ -4,7 +4,8 @@ from api.resources.foo import Foo
 from api.resources.bar import Bar
 import config
 
-api = Api(prefix=config.API_PREFIX)
+api_standard = Api(prefix=config.API_PREFIX)
+api_mtls = Api(prefix=config.SECURE_API_PREFIX)
 
-api.add_resource(Foo, '/Foo', '/Foo/<string:id>')
-api.add_resource(Bar, '/Bar', '/Bar/<string:id>')
+api_standard.add_resource(Foo, '/foo', '/foo/<string:token>')
+api_mtls.add_resource(Bar, '/bar', '/bar/<string:token>')
