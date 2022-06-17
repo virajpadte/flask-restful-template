@@ -1,4 +1,4 @@
-FROM python:3.8.3-slim-buster
+FROM python:3.10.5-slim-buster
 COPY service /flask-restful-sample
 COPY requirements.txt /flask-restful-sample/
 WORKDIR /flask-restful-sample

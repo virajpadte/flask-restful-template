@@ -1,4 +1,5 @@
 SERVICE_NAME := $(notdir $(CURDIR))
+UNAME := $(shell uname -m)
 # HELP
 .PHONY: help
 
@@ -9,10 +10,20 @@ help: ## This help.
 
 # DOCKER TASKS
 build: ## Build the container
-	docker build -t $(SERVICE_NAME) .
+ifeq ($(UNAME), arm64)
+	@echo "Building for amd64 platform"
+	@docker build --platform=linux/amd64 -t $(SERVICE_NAME) .
+else
+	@echo "Building for x86_64 platform"
+	@docker build -t $(SERVICE_NAME) .
+endif
 
 build-nc: ## Build the container without caching
-	docker build --no-cache -t $(SERVICE_NAME) .
+ifeq ($(UNAME), arm64)
+	@docker build --platform=linux/amd64 --no-cache -t $(SERVICE_NAME) .
+else
+	@docker build --no-cache -t $(SERVICE_NAME) .
+endif
 
 run-local: ## Run container on port configured in `config.env`
 	cd service; python3 -m flask run -p 5001
