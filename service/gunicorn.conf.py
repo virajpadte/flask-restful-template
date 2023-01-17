@@ -1,0 +1,11 @@
+bind = '127.0.0.1:8080'
+backlog = 2048
+workers = 1
+worker_class = 'gevent'
+worker_connections = 1000
+timeout = 5
+keepalive = 5
+accesslog = '../.log/access.log'
+errorlog = '../.log/general.log'
+loglevel = 'debug'
+access_log_format = '%(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"'
